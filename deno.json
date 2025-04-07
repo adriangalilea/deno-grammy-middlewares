@@ -28,8 +28,5 @@
       "**/*.test.ts"
     ]
   },
-  "workspace": [
-    "."
-  ],
   "license": "MIT"
 }
