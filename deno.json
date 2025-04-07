@@ -1,13 +1,13 @@
 {
   "name": "@adriangalilea/deno-grammy-middlewares",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A port of grammy-middlewares for Deno users of grammY with fixes and additional functionality",
   "author": "Adrian Galilea",
   "email": "adriangalilea@gmail.com",
   "homepage": "https://adriangalilea.com",
   "repository": "https://github.com/adriangalilea/deno-grammy-middlewares",
   "tasks": {
-    "check": "deno check mod.ts",
+    "check": "deno check --allow-import mod.ts",
     "fmt": "deno fmt"
   },
   "fmt": {
@@ -28,7 +28,7 @@
       "**/*.test.ts"
     ]
   },
-  "workspaces": [
+  "workspace": [
     "."
   ],
   "license": "MIT"
