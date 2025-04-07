@@ -27,7 +27,7 @@ The `jsr-blocked` branch preserves our JSR publishing setup for when this become
 ### Using deno.land/x
 ```ts
 // Import from deno.land
-import { ignoreOld, onlyAdmin /* etc */ } from "https://deno.land/x/deno-grammy-middlewares/mod.ts";
+import { ignoreOld, onlyAdmin /* etc */ } from "https://deno.land/x/deno_grammy_middlewares/mod.ts";
 ```
 
 ## Usage
@@ -42,12 +42,12 @@ import {
   onlySuperAdmin,
   sequentialize,
   onlyMenuAuthor,
-} from "https://deno.land/x/deno-grammy-middlewares/mod.ts";
+} from "https://deno.land/x/deno_grammy_middlewares/mod.ts";
 ```
 
 ### Importing All Middlewares
 ```ts
-import * as grammy_middlewares from "https://deno.land/x/deno-grammy-middlewares/mod.ts";
+import * as grammy_middlewares from "https://deno.land/x/deno_grammy_middlewares/mod.ts";
 
 // Use middlewares with namespace
 // grammy_middlewares.ignoreOld()
