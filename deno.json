@@ -1,0 +1,19 @@
+{
+  "name": "grammy_middlewares",
+  "version": "0.1.0",
+  "description": "A port of grammy-middlewares for Deno users of grammY with fixes and additional functionality",
+  "author": "Adrian Galilea",
+  "email": "adriangalilea@gmail.com",
+  "homepage": "https://adriangalilea.com",
+  "repository": "https://github.com/adriangalilea/deno-grammy-middlewares",
+  "tasks": {
+    "check": "deno check mod.ts",
+    "fmt": "deno fmt"
+  },
+  "fmt": {
+    "include": ["src/", "mod.ts", "deno.json"]
+  },
+  "exports": {
+    ".": "./mod.ts"
+  }
+}

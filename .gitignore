@@ -1,0 +1,13 @@
+# Deno
+.deno/
+.env
+deno.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
