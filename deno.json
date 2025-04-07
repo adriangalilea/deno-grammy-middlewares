@@ -17,7 +17,19 @@
     ".": "./mod.ts"
   },
   "publish": {
-    "include": ["README.md", "LICENSE", "mod.ts", "deps.ts", "src/**/*.ts"]
+    "include": [
+      "README.md",
+      "LICENSE",
+      "mod.ts",
+      "deps.ts",
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "**/*.test.ts"
+    ]
   },
+  "workspaces": [
+    "."
+  ],
   "license": "MIT"
 }
