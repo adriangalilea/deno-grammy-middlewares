@@ -1,5 +1,5 @@
 {
-  "name": "grammy_middlewares",
+  "name": "@adriangalilea/grammy_middlewares",
   "version": "0.1.0",
   "description": "A port of grammy-middlewares for Deno users of grammY with fixes and additional functionality",
   "author": "Adrian Galilea",
@@ -15,5 +15,9 @@
   },
   "exports": {
     ".": "./mod.ts"
-  }
+  },
+  "publish": {
+    "include": ["README.md", "LICENSE", "mod.ts", "deps.ts", "src/**/*.ts"]
+  },
+  "license": "MIT"
 }
