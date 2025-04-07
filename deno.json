@@ -1,5 +1,5 @@
 {
-  "name": "@adriangalilea/deno-grammy-middlewares",
+  "name": "deno-grammy-middlewares",
   "version": "0.1.2",
   "description": "A port of grammy-middlewares for Deno users of grammY with fixes and additional functionality",
   "author": "Adrian Galilea",
