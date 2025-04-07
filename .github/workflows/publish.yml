@@ -1,9 +1,9 @@
-name: Publish Package
+name: Publish
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 jobs:
   publish:
@@ -16,5 +16,5 @@ jobs:
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
-      - name: Publish to JSR
+      - name: Publish package
         run: deno publish
