@@ -8,8 +8,8 @@ import { Context, NextFunction } from "../../deps.ts";
 export const onlySuperAdmin = <T extends Context>(
   superAdminId: number | number[],
   errorHandler?: (ctx: T) => unknown,
-) =>
-(ctx: T, next: NextFunction) => {
+): ((ctx: T, next: NextFunction) => unknown) =>
+(ctx: T, next: NextFunction): unknown => {
   const ids = Array.isArray(superAdminId) ? superAdminId : [superAdminId];
 
   if (!ctx.from?.id || !ids.includes(ctx.from.id)) {

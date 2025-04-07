@@ -7,7 +7,7 @@ import { Context, NextFunction } from "../../deps.ts";
  */
 export const onlyAdmin =
   <T extends Context>(errorHandler?: (ctx: T) => unknown) =>
-  async (ctx: T, next: NextFunction) => {
+  async (ctx: T, next: NextFunction): Promise<unknown> => {
     // No chat = no service
     if (!ctx.chat) {
       return;

@@ -1,4 +1,4 @@
-import { baseSequentialize, Context } from "../../deps.ts";
+import { baseSequentialize, Context, NextFunction } from "../../deps.ts";
 
 /**
  * Default function to get the sequential identifier from context
@@ -19,5 +19,5 @@ export const defaultGetSessionKey = <T extends Context>(
  *
  * @returns Middleware that sequentializes updates
  */
-export const sequentialize = <T extends Context>() =>
+export const sequentialize = <T extends Context>(): ((ctx: T, next: NextFunction) => Promise<unknown>) =>
   baseSequentialize<T>(defaultGetSessionKey);

@@ -8,8 +8,8 @@ import { Context, NextFunction } from "../../deps.ts";
 export const ignoreOld = <T extends Context>(
   threshold = 5 * 60,
   debug?: (message: string) => void,
-) =>
-(ctx: T, next: NextFunction) => {
+): ((ctx: T, next: NextFunction) => unknown) =>
+(ctx: T, next: NextFunction): unknown => {
   if (
     ctx.msg?.date &&
     new Date().getTime() / 1000 - ctx.msg.date > threshold

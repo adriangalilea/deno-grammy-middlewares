@@ -7,7 +7,7 @@ import { Context, NextFunction } from "../../deps.ts";
  */
 export const onlyMenuAuthor =
   <T extends Context>(errorHandler?: (ctx: T) => unknown) =>
-  (ctx: T, next: NextFunction) => {
+  (ctx: T, next: NextFunction): unknown => {
     // Not enough data to check, just pass through
     if (
       !ctx.msg?.reply_to_message?.message_id ||

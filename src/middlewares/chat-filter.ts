@@ -8,7 +8,7 @@ import { Context, NextFunction } from "../../deps.ts";
  */
 const createChatTypeMiddleware =
   <T extends Context>(isPrivate: boolean, errorHandler?: (ctx: T) => unknown) =>
-  (ctx: T, next: NextFunction) => {
+  (ctx: T, next: NextFunction): unknown => {
     if ((ctx.chat?.type === "private") === isPrivate) {
       return next();
     }
@@ -22,7 +22,7 @@ const createChatTypeMiddleware =
  */
 export const onlyPublic = <T extends Context>(
   errorHandler?: (ctx: T) => unknown,
-) => createChatTypeMiddleware(false, errorHandler);
+): ((ctx: T, next: NextFunction) => unknown) => createChatTypeMiddleware(false, errorHandler);
 
 /**
  * Middleware that only allows messages from private chats (private)
@@ -31,4 +31,4 @@ export const onlyPublic = <T extends Context>(
  */
 export const onlyPrivate = <T extends Context>(
   errorHandler?: (ctx: T) => unknown,
-) => createChatTypeMiddleware(true, errorHandler);
+): ((ctx: T, next: NextFunction) => unknown) => createChatTypeMiddleware(true, errorHandler);
