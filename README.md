@@ -42,6 +42,7 @@ import * as grammy_middlewares from "@adriangalilea/deno-grammy-middlewares";
 
 ### Example
 
+```ts
 bot.use(
   ignoreOld(),
   onlyAdmin(ctx => ctx.reply(
