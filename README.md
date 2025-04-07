@@ -2,6 +2,18 @@
 
 A port of [grammy-middlewares](https://github.com/backmeupplz/grammy-middlewares) for [Deno](https://deno.land) users of [grammY](https://grammy.dev), with fixes and additional functionality.
 
+## ⚠️ JSR Publication Blocked ⚠️
+
+**IMPORTANT**: This package cannot currently be published on JSR due to dependency constraints.
+
+The package requires types from `grammy_types` which are only available via HTTPS imports from deno.land. JSR does not allow HTTPS imports in packages as documented in [JSR migration guide](https://jsr.io/docs/migrate-x-to-jsr#https-modules-supported-in-deno-not-in-jsr-packages).
+
+JSR publication will remain blocked until:
+1. grammy and grammy_types are published on JSR officially
+2. We can update our dependencies accordingly
+
+The `jsr-blocked` branch preserves our JSR publishing setup for when this becomes possible.
+
 ## Motivation
 
 - [issue #4](https://github.com/backmeupplz/grammy-middlewares/issues/4) in the original repository. The issue has been unresolved for over a year and involves a dependency that isn't necessary on Deno so we can remove the dependency and fix the issue.
@@ -12,9 +24,10 @@ A port of [grammy-middlewares](https://github.com/backmeupplz/grammy-middlewares
 
 ## Installation
 
-### Using JSR (recommended)
-```bash
-deno add jsr:@adriangalilea/deno-grammy-middlewares
+### Using deno.land/x
+```ts
+// Import from deno.land
+import { ignoreOld, onlyAdmin /* etc */ } from "https://deno.land/x/deno_grammy_middlewares/mod.ts";
 ```
 
 ## Usage
@@ -29,12 +42,12 @@ import {
   onlySuperAdmin,
   sequentialize,
   onlyMenuAuthor,
-} from "@adriangalilea/deno-grammy-middlewares";
+} from "https://deno.land/x/deno_grammy_middlewares/mod.ts";
 ```
 
 ### Importing All Middlewares
 ```ts
-import * as grammy_middlewares from "@adriangalilea/deno-grammy-middlewares";
+import * as grammy_middlewares from "https://deno.land/x/deno_grammy_middlewares/mod.ts";
 
 // Use middlewares with namespace
 // grammy_middlewares.ignoreOld()
