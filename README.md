@@ -10,8 +10,16 @@ A port of [grammy-middlewares](https://github.com/backmeupplz/grammy-middlewares
 - `onlySuperAdmin` now also supports an array of super admins.s
 - `onlyPublic` existed and `onlyPrivate` felt a natural addition.
 
+## Installation
+
+### Using JSR (recommended)
+```bash
+deno add jsr:@adriangalilea/deno-grammy-middlewares
+```
+
 ## Usage
 
+### Importing Individual Middlewares
 ```ts
 import {
   ignoreOld,
@@ -21,9 +29,18 @@ import {
   onlySuperAdmin,
   sequentialize,
   onlyMenuAuthor,
-} from "https://deno.land/x/grammy_middlewares/mod.ts";
+} from "@adriangalilea/deno-grammy-middlewares";
+```
 
-// ...
+### Importing All Middlewares
+```ts
+import * as grammy_middlewares from "@adriangalilea/deno-grammy-middlewares";
+
+// Use middlewares with namespace
+// grammy_middlewares.ignoreOld()
+```
+
+### Example
 
 bot.use(
   ignoreOld(),
