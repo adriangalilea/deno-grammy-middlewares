@@ -28,10 +28,17 @@ export const onlyAdmin =
       return;
     }
 
-    // Check the member status
-    const chatMember = await ctx.getChatMember(ctx.from.id);
-    if (["creator", "administrator"].includes(chatMember.status)) {
-      return next();
+    try {
+      // Check the member status
+      const chatMember = await ctx.getChatMember(ctx.from.id);
+      if (["creator", "administrator"].includes(chatMember.status)) {
+        return next();
+      }
+    } catch (error: unknown) {
+      // Bot might have been kicked from the chat or other API errors
+      // In this case, we can't verify admin status, so we'll deny access
+      console.error(`Failed to get chat member: ${error instanceof Error ? error.message : String(error)}`);
+      return errorHandler?.(ctx);
     }
 
     // Not an admin
